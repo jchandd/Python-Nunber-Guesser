@@ -19,8 +19,8 @@ def get_valid_integer(prompt):
 
 def get_number_range():
     while True:
-        low = get_valid_integer("Enter the LOW number of the range: ")
-        high = get_valid_integer("Enter the HIGH number of the range: ")
+        low = get_valid_integer("Enter the Low number of the range: ")
+        high = get_valid_integer("Enter the High number of the range: ")
 
         if high > low:
             return low, high
@@ -29,7 +29,7 @@ def get_number_range():
 
 
 # Function to get number of attempts
-# Ensures the user enters a positive number
+# Make sure user uses a positive number
 
 
 def get_attempts():
@@ -39,3 +39,42 @@ def get_attempts():
             return attempts
         else:
             print(" Number of attempts must be greater than 0.")
+
+
+# Function to play one round of the game
+
+
+def play_game(name):
+    print(f"\nAlright {name}, let's set up your game!")
+
+    low, high = get_number_range()
+    attempts_allowed = get_attempts()
+
+    # Generate random number within selected range
+    secret_number = random.randint(low, high)
+
+    print(f"\nI have chosen a number between {low} and {high}.")
+    print(f"You have {attempts_allowed} attempts to guess it!")
+
+    attempts_used = 0
+
+    # Loop until attempts run out
+    while attempts_used < attempts_allowed:
+        guess = get_valid_integer("\nEnter your guess: ")
+        attempts_used += 1
+
+        if guess < secret_number:
+            print(" Too low!")
+        elif guess > secret_number:
+            print(" Too high!")
+        else:
+            print(
+                f" Congratulations! {name}! You guessed the number in {attempts_used} attempts!"
+            )
+            return  # End the game round if guessed correctly
+
+        print(f"Attempts used: {attempts_used}/{attempts_allowed}")
+
+    # If loop ends, user ran out of attempts
+    print(f"\n Sorry {name}, you've used all your attempts.")
+    print(f"The correct number was: {secret_number}")
