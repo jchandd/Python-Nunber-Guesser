@@ -1,12 +1,9 @@
-# Import random module to generate number
 import random
 
-# Function to get valid integer input while handling error
 
-# Function to get a valid 'y' or 'n' response
+# Function to get and validate an integer
 
 
-# Function to play a round of the game
 def get_valid_integer(prompt):
     while True:
         try:
@@ -16,39 +13,29 @@ def get_valid_integer(prompt):
             print(" Invalid input. Please enter a valid whole number.")
 
 
-# Ask number range
+# Function to get a valid number range
+# Ensures the high number is greater than the low number
 
 
-# Ensure large number is greater than small number
 def get_number_range():
     while True:
-        low = get_valid_integer("Enter the Low number of the range: ")
-        high = get_valid_integer("Enter the High number of the range: ")
+        low = get_valid_integer("Enter the LOW number of the range: ")
+        high = get_valid_integer("Enter the HIGH number of the range: ")
 
         if high > low:
             return low, high
         else:
-            print(" High number must be larger than low number. Please try again.")
+            print(" High number must be greater than low number. Please try again.")
 
 
-# Ask for amount of attempts
+# Function to get number of attempts
+# Ensures the user enters a positive number
 
-# Generate random number
 
-# Track amount of attempts
-
-# Loop for user guesses
-
-# Check if guess it too low or high
-
-# Display success message if geussed correctly
-
-# If max attempts are used, reveal correct number
-
-# Main game loop
-
-# Ask for user name and greet them
-
-# Ask if they want to play again, and have to press either 'y' or 'n'
-
-# Run game
+def get_attempts():
+    while True:
+        attempts = get_valid_integer("How many attempts would you like? ")
+        if attempts > 0:
+            return attempts
+        else:
+            print(" Number of attempts must be greater than 0.")
