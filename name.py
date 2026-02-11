@@ -78,3 +78,19 @@ def play_game(name):
     # If loop ends, user ran out of attempts
     print(f"\n Sorry {name}, you've used all your attempts.")
     print(f"The correct number was: {secret_number}")
+
+
+# Function to ask if the user wants to play again
+# Only accepts 'y' or 'n'
+
+
+def play_again():
+    while True:
+        choice = input("\nWould you like to play again? (y/n): ").strip().lower()
+
+        if choice == "y":
+            return True
+        elif choice == "n":
+            return False
+        else:
+            print(" Please enter only 'y' or 'n'.")
