@@ -94,3 +94,27 @@ def play_again():
             return False
         else:
             print(" Please enter only 'y' or 'n'.")
+
+
+# Main function to control the program flow
+
+
+def main():
+    print(" Welcome to the Number Guessing Game!")
+
+    # Ask for user's name and greet them
+    name = input("What is your name? ").strip()
+    print(f"Hello, {name}! Nice to meet you.")
+
+    # Main game loop
+    while True:
+        play_game(name)
+
+        if not play_again():
+            print(f"\nThanks for playing, {name}! Goodbye ")
+            break
+
+
+# Run the program
+if __name__ == "__main__":
+    main()
