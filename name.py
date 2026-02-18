@@ -1,26 +1,21 @@
 import random
 
-
 # Function to get and validate an integer
-
-
 def get_valid_integer(prompt):
     while True:
         try:
             value = int(input(prompt).strip())  # .strip() removes extra spaces
             return value
         except ValueError:
-            print(" Invalid input. Please enter a valid whole number.")
+            print("Invalid input. Please enter a valid whole number.")
 
 
-# Function to get a valid number range
+# Function on to get a valid number range
 # Ensures the high number is greater than the low number
-
-
 def get_number_range():
     while True:
-        low = get_valid_integer("Enter the Low number of the range: ")
-        high = get_valid_integer("Enter the High number of the range: ")
+        low = get_valid_integer("Enter the low number of the range: ")
+        high = get_valid_integer("Enter the high number of the range: ")
 
         if high > low:
             return low, high
@@ -30,10 +25,8 @@ def get_number_range():
 
 # Function to get number of attempts
 # Make sure user uses a positive number
-
-
 def get_attempts():
-    while True:
+    while True: 
         attempts = get_valid_integer("How many attempts would you like? ")
         if attempts > 0:
             return attempts
@@ -41,9 +34,7 @@ def get_attempts():
             print(" Number of attempts must be greater than 0.")
 
 
-# Function to play one round of the game
-
-
+# Function to play one round of the game 
 def play_game(name):
     print(f"\nAlright {name}, let's set up your game!")
 
@@ -54,7 +45,7 @@ def play_game(name):
     secret_number = random.randint(low, high)
 
     print(f"\nI have chosen a number between {low} and {high}.")
-    print(f"You have {attempts_allowed} attempts to guess it!")
+    print(f"You have {attempts_allowed} attempts to guess!")
 
     attempts_used = 0
 
@@ -79,11 +70,8 @@ def play_game(name):
     print(f"\n Sorry {name}, you've used all your attempts.")
     print(f"The correct number was: {secret_number}")
 
-
 # Function to ask if the user wants to play again
 # Only accepts 'y' or 'n'
-
-
 def play_again():
     while True:
         choice = input("\nWould you like to play again? (y/n): ").strip().lower()
@@ -95,10 +83,7 @@ def play_again():
         else:
             print(" Please enter only 'y' or 'n'.")
 
-
 # Main function to control the program flow
-
-
 def main():
     print(" Welcome to the Number Guessing Game!")
 
