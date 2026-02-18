@@ -74,7 +74,9 @@ def play_game(name):
 # Only accepts 'y' or 'n'
 def play_again():
     while True:
-        choice = input("\nWould you like to play again? (y/n): ").strip().lower()
+        choice = (
+            input("\nPress 'y' to replay and press 'n' to end (y/n): ").strip().lower()
+        )
 
         if choice == "y":
             return True
