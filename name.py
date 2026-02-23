@@ -1,5 +1,6 @@
 import random
 
+
 # Function to get and validate an integer
 def get_valid_integer(prompt):
     while True:
@@ -26,7 +27,7 @@ def get_number_range():
 # Function to get number of attempts
 # Make sure user uses a positive number
 def get_attempts():
-    while True: 
+    while True:
         attempts = get_valid_integer("How many attempts would you like? ")
         if attempts > 0:
             return attempts
@@ -34,7 +35,7 @@ def get_attempts():
             print(" Number of attempts must be greater than 0.")
 
 
-# Function to play one round of the game 
+# Function to play one round of the game
 def play_game(name):
     print(f"\nAlright {name}, let's set up your game!")
 
@@ -43,7 +44,7 @@ def play_game(name):
 
     # Generate random number within selected range
     secret_number = random.randint(low, high)
-
+    # range
     print(f"\nI have chosen a number between {low} and {high}.")
     print(f"You have {attempts_allowed} attempts to guess!")
 
@@ -70,6 +71,7 @@ def play_game(name):
     print(f"\n Sorry {name}, you've used all your attempts.")
     print(f"The correct number was: {secret_number}")
 
+
 # Function to ask if the user wants to play again
 # Only accepts 'y' or 'n'
 def play_again():
@@ -84,6 +86,7 @@ def play_again():
             return False
         else:
             print(" Please enter only 'y' or 'n'.")
+
 
 # Main function to control the program flow
 def main():
