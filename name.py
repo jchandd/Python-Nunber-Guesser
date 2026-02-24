@@ -81,9 +81,9 @@ def play_again():
         )
 
         if choice == "y":
-            return True
-        elif choice == "n":
             return False
+        elif choice == "n":
+            return True
         else:
             print(" Please enter only 'y' or 'n'.")
 
@@ -100,7 +100,7 @@ def main():
     while True:
         play_game(name)
 
-        if not play_again():
+        if play_again():
             print(f"\nThanks for playing, {name}! Goodbye ")
             break
 
